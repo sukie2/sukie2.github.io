@@ -7,7 +7,7 @@
 <script type="text/javascript">
         var app = new PIXI.Application({
             width: 300,
-            height: 500,
+            height: 400,
             forceCanvas: true
         });
     
@@ -27,7 +27,7 @@ function onAssetsLoaded(loader, res) {
 
     // set the position
     spineBoy.x = app.screen.width / 2;
-    spineBoy.y = app.screen.height-200;
+    spineBoy.y = app.screen.height;
 
     spineBoy.scale.set(1);
 
@@ -43,9 +43,10 @@ function onAssetsLoaded(loader, res) {
     app.stage.on('pointerdown', function() {
         spineBoy.state.setAnimation(0, 'jump', false);
         spineBoy.state.addAnimation(0, 'walk', true, 0);
+        JavaScriptInterface.doEchoTest("Hello from JS");
     });
     
-    JavaScriptInterface.doEchoTest("Hello from JS");
+    
 }
     
 function testJump(){
