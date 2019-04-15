@@ -7,12 +7,12 @@
 <script type="text/javascript">
         var app = new PIXI.Application({
             width: 300,
-            height: 600,
+            height: 500,
             forceCanvas: true
         });
     
-var spineBoy;
-document.body.appendChild(app.view);
+    var spineBoy;
+    document.body.appendChild(app.view);
 
 // load spine data
 PIXI.loader
@@ -27,12 +27,12 @@ function onAssetsLoaded(loader, res) {
 
     // set the position
     spineBoy.x = app.screen.width / 2;
-    spineBoy.y = app.screen.height;
+    spineBoy.y = app.screen.height-200;
 
-    spineBoy.scale.set(1.5);
+    spineBoy.scale.set(1);
 
     // set up the mixes!
-    spineBoy.stateData.setMix('walk', 'jump', 0.2);
+    spineBoy.stateData.setMix('walk', 'jump', 0.1);
     spineBoy.stateData.setMix('jump', 'walk', 0.4);
 
     // play animation
@@ -44,15 +44,15 @@ function onAssetsLoaded(loader, res) {
         spineBoy.state.setAnimation(0, 'jump', false);
         spineBoy.state.addAnimation(0, 'walk', true, 0);
     });
+    
+    JavaScriptInterface.doEchoTest("Hello from JS");
 }
     
-    function testJump(){
+function testJump(){
     spineBoy.state.setAnimation(0, 'jump', false);
     spineBoy.state.addAnimation(0, 'walk', true, 0);
-    }
+}
     
-
-
     </script>
 </body>
 
