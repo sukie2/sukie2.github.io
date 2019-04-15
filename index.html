@@ -43,6 +43,12 @@ function onAssetsLoaded(loader, res) {
         spineBoy.state.addAnimation(0, 'walk', true, 0);
     });
 }
+    
+    function testJump(){
+    spineBoy.state.setAnimation(0, 'jump', false);
+    spineBoy.state.addAnimation(0, 'walk', true, 0);
+    }
+    
 
 
     </script>
