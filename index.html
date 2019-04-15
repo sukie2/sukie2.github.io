@@ -10,6 +10,8 @@
             height: 600,
             forceCanvas: true
         });
+    
+var spineBoy;
 document.body.appendChild(app.view);
 
 // load spine data
@@ -21,7 +23,7 @@ app.stage.interactive = true;
 
 function onAssetsLoaded(loader, res) {
     // create a spine boy
-    var spineBoy = new PIXI.spine.Spine(res.spineboy.spineData);
+    spineBoy = new PIXI.spine.Spine(res.spineboy.spineData);
 
     // set the position
     spineBoy.x = app.screen.width / 2;
